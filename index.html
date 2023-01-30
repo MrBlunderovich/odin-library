@@ -6,28 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="obj_constructor.js" defer></script>
+    <script src="index.js" defer></script>
   </head>
   <body>
     <div class="container"></div>
-    <form action="#" class="form">
-      <label for="title">Title:</label>
-      <input type="text" name="title" id="title" required value="New title" />
-      <label for="author">Author:</label>
-      <input
-        type="text"
-        name="author"
-        id="author"
-        required
-        value="New author"
-      />
-      <label for="pages">Page count:</label>
-      <input type="text" name="pages" id="pages" required value="100" />
-      <label for="read"
-        >Mark as read: <input type="checkbox" name="read" id="read"
-      /></label>
+    <div class="form-container invisible">
+      <form action="#" class="form">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required value="New title" />
+        <label for="author">Author:</label>
+        <input
+          type="text"
+          name="author"
+          id="author"
+          required
+          value="New author"
+        />
+        <label for="pages">Page count:</label>
+        <input type="text" name="pages" id="pages" required value="100" />
+        <label for="read"
+          >Mark as read: <input type="checkbox" name="read" id="read"
+        /></label>
 
-      <button class="add-book">Add book</button>
-    </form>
+        <button class="add-book">Add book</button>
+      </form>
+    </div>
   </body>
 </html>

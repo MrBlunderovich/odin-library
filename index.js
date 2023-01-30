@@ -34,8 +34,10 @@ function renderLibrary() {
     <span class="plus">+</span>
     <span>Add book</span>
     </button>`;
+  const showFormButton = document.querySelector(".add-book-form");
   const readButtons = document.querySelectorAll(".read-book");
   const removeButtons = document.querySelectorAll(".remove-book");
+  showFormButton.addEventListener("click", toggleFormVisibility);
   removeButtons.forEach((button) => {
     button.addEventListener("click", removeBook);
   });
@@ -55,6 +57,7 @@ function addBook(event) {
   const newBook = new Book(title, author, pages, read);
   library.push(newBook);
   renderLibrary();
+  toggleFormVisibility();
 }
 function removeBook(event) {
   const index = event.target.dataset.index;
@@ -74,6 +77,11 @@ function readBook(event) {
   const index = event.target.dataset.index;
   library[index].read = !library[index].read;
   renderLibrary();
+}
+
+function toggleFormVisibility() {
+  const formContainer = document.querySelector(".form-container");
+  formContainer.classList.toggle("invisible");
 }
 
 function Book(title, author, pages, read) {
