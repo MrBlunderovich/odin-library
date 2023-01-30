@@ -12,9 +12,11 @@ const library = [
   { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 295, read: false },
 ];
 
+const formContainer = document.querySelector(".form-container");
 const container = document.querySelector(".container");
 const form = document.querySelector(".form");
 form.addEventListener("submit", addBook);
+formContainer.addEventListener("click", hideForm);
 
 function renderLibrary() {
   container.innerHTML =
@@ -25,8 +27,8 @@ function renderLibrary() {
     <p>by <strong>${item.author}</strong></p>
     <p><strong>${item.pages}</strong> pages</p>
     <p>${item.read ? "already read" : "not read yet"}</p>
-    <button class="remove-book card-btn" data-index="${index}">Remove</button>
     <button class="read-book card-btn" data-index="${index}">Mark as read</button>
+    <button class="remove-book card-btn" data-index="${index}">Remove</button>
     </div>`;
       })
       .join("") +
@@ -79,8 +81,13 @@ function readBook(event) {
   renderLibrary();
 }
 
+function hideForm(event) {
+  if (event.target === formContainer) {
+    toggleFormVisibility();
+  }
+}
+
 function toggleFormVisibility() {
-  const formContainer = document.querySelector(".form-container");
   formContainer.classList.toggle("invisible");
 }
 
