@@ -75,6 +75,7 @@ function addBook(event) {
   library.push(newBook);
   renderLibrary();
   toggleFormVisibility();
+  event.target.reset();
 }
 function removeBook(event) {
   const index = event.target.dataset.index;
