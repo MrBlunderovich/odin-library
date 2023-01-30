@@ -1,15 +1,30 @@
 const library = [
-  { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 295, read: false },
-  { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 295, read: false },
-  { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 295, read: false },
-  { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 295, read: false },
   {
-    title: "The Hobbit",
-    author: "J.R.R. Tolkien and co",
+    title: "The Wealth of Nations",
+    author: "A. Smith",
     pages: 295,
     read: false,
   },
-  { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 295, read: false },
+  { title: "On Liberty", author: "J.S. Mill", pages: 295, read: false },
+  {
+    title: "What Is Seen and What Is Not Seen",
+    author: "F. Bastiat",
+    pages: 295,
+    read: false,
+  },
+  { title: "Applied Economics", author: "T. Sowell", pages: 295, read: false },
+  {
+    title: "The Theory of Moral Sentiments",
+    author: "A. Smith",
+    pages: 295,
+    read: false,
+  },
+  {
+    title: "The Gulag Archipelago",
+    author: "A. Solzhenitsyn",
+    pages: 295,
+    read: false,
+  },
 ];
 
 const formContainer = document.querySelector(".form-container");
