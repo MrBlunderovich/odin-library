@@ -31,7 +31,7 @@ const formContainer = document.querySelector(".form-container");
 const container = document.querySelector(".container");
 const form = document.querySelector(".form");
 form.addEventListener("submit", addBook);
-formContainer.addEventListener("click", hideForm);
+formContainer.addEventListener("mousedown", hideForm);
 
 function renderLibrary() {
   container.innerHTML =
