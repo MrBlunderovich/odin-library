@@ -30,7 +30,9 @@ const library = [
 const formContainer = document.querySelector(".form-container");
 const container = document.querySelector(".container");
 const form = document.querySelector(".form");
-form.addEventListener("submit", addBook);
+//form.addEventListener("submit", addBook);
+form.addEventListener("submit", handleFormSubmit);
+
 formContainer.addEventListener("mousedown", hideForm);
 
 function renderLibrary() {
@@ -118,5 +120,55 @@ class Book {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${
       this.read ? "already read" : "not read yet"
     }.`;
+  }
+}
+////////////////////////////////////////////////////////////////
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const pagesInput = document.querySelector("#pages");
+
+/* pagesInput.addEventListener("input", titleValiditle);
+function titleValiditle(event) {
+  if (pagesInput.validity.rangeUnderflow) {
+    pagesInput.setCustomValidity("What kind of book has no pages?");
+  } else {
+    pagesInput.setCustomValidity("");
+  }
+} */
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  console.log("handleFormSubmit");
+  console.log(form.checkValidity());
+  document.querySelectorAll(".error").forEach((error) => {
+    error.classList.remove("visible");
+    error.textContent = "";
+  });
+  if (form.checkValidity()) {
+    addBook(event);
+  } else {
+    console.log("errroro!");
+    showError();
+  }
+  //console.log(form.reportValidity());
+}
+
+function showError() {
+  console.log("show error");
+  if (!titleInput.validity.valid) {
+    const errorMessage = document.querySelector(".title-error");
+    errorMessage.classList.add("visible");
+    errorMessage.textContent = "A book should have a title";
+    titleInput.focus();
+  } else if (!authorInput.validity.valid) {
+    const errorMessage = document.querySelector(".author-error");
+    errorMessage.classList.add("visible");
+    errorMessage.textContent = "A book should have an author";
+    authorInput.focus();
+  } else if (!pagesInput.validity.valid) {
+    const errorMessage = document.querySelector(".pages-error");
+    errorMessage.classList.add("visible");
+    errorMessage.textContent = "A book should have some pages";
+    pagesInput.focus();
   }
 }

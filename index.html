@@ -11,12 +11,16 @@
   <body>
     <div class="container"></div>
     <div class="form-container invisible">
-      <form action="#" class="form">
-        <label for="title">Title:</label>
+      <form action="#" class="form" novalidate>
+        <label for="title">Title:<span class="error title-error"></span></label>
         <input type="text" name="title" id="title" required />
-        <label for="author">Author:</label>
+        <label for="author"
+          >Author:<span class="error author-error"></span
+        ></label>
         <input type="text" name="author" id="author" required />
-        <label for="pages">Page count:</label>
+        <label for="pages"
+          >Page count:<span class="error pages-error"></span
+        ></label>
         <input type="number" name="pages" id="pages" required min="1" />
         <label for="read"
           >Mark as read: <input type="checkbox" name="read" id="read"
